@@ -1,0 +1,155 @@
+MINYANDA_RESUME_0 
+\documentclass[12pt,a4paper]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[french]{babel}
+\usepackage{lmodern}
+\usepackage{hyperref}
+\usepackage{enumitem}
+
+\title{Résumé du cours : \\ \textbf{Théories et Pratiques de l’Investigation Numérique}}
+\author{MINYANDA YONGUI JOSE LOIC \\ 22P071 \\ CIN4}
+\date{}
+
+\begin{document}
+
+\maketitle
+
+\section*{Introduction}
+
+Ce résumé présente une synthèse structurée du manuel \textit{Théories et Pratiques de l’Investigation Numérique} de Thierry Emmanuel Minka Mi Nguidjoi. 
+Il met en évidence les fondements philosophiques et éthiques de la discipline, son évolution historique, ses modèles théoriques et normes internationales, ainsi que ses méthodes pratiques, outils et enjeux face à l’informatique post-quantique. 
+Enfin, il illustre ces concepts par un cas pratique appliqué au Cameroun.
+
+\section{Fondements philosophiques et éthiques}
+
+L’investigation numérique n’est pas seulement un ensemble d’outils techniques : c’est une discipline qui engage la responsabilité de l’investigateur face à la société. 
+L’ouvrage insiste sur la notion de \textit{philosophe-praticien}, capable d’utiliser ses compétences dans le respect de principes éthiques.
+
+Le Trilemme CRO (Confidentialité, Fiabilité, Opposabilité) structure la réflexion autour de la preuve numérique :
+
+\begin{itemize}
+    \item \textbf{Confidentialité} : protéger les données sensibles, respecter la vie privée.
+    \item \textbf{Fiabilité} : assurer la reproductibilité et l’intégrité des résultats.
+    \item \textbf{Opposabilité} : garantir que les preuves résistent devant un tribunal.
+\end{itemize}
+
+Une charte déontologique formalise cet engagement, à travers dix commandements tels que : ne pas causer de dommages aux systèmes, documenter ses méthodes, protéger la chaîne de custody et témoigner avec honnêteté. 
+Quatre piliers éthiques complètent cette charte : intégrité, proportionnalité, responsabilité et service.
+
+Ainsi, la technique doit toujours être guidée par la sagesse et le sens du devoir, car l’investigation numérique impacte directement des vies humaines et des droits fondamentaux.
+
+\section{Historique et évolution de la discipline}
+
+La discipline a émergé dans les années 1970 avec les premiers litiges liés à l’informatique. Son évolution peut être découpée en grandes phases :
+
+\begin{itemize}
+    \item 1970--1990 : \textbf{Les prémices}. Apparition des premiers cas judiciaires liés aux ordinateurs, comme l’affaire du groupe « 414s ».
+    \item 1990--2000 : \textbf{Professionnalisation}. Création d’unités spécialisées, enquêtes emblématiques comme l’Operation Sundevil ou l’arrestation de Kevin Mitnick.
+    \item 2000--2010 : \textbf{Standardisation}. Développement de cadres internationaux (ISO, NIST), avec des affaires marquantes comme Enron.
+    \item 2010--2020 : \textbf{Big data et Cloud}. Émergence des cyberattaques massives (Silk Road, Panama Papers, WannaCry).
+    \item 2020 à nos jours : \textbf{IA et post-quantique}. Attaques sophistiquées comme SolarWinds, posant la question de l’avenir de la cryptographie.
+\end{itemize}
+
+Ces étapes montrent que l’investigation numérique évolue constamment en fonction des menaces, des technologies et des besoins juridiques.
+
+\section{Cadre théorique et normes}
+
+\subsection{Modèles théoriques}
+
+\begin{itemize}
+    \item DFRWS (2001) : définit les étapes de collecte, préservation, analyse et présentation.
+    \item Casey (2004) : met l’accent sur le contexte judiciaire et l’admissibilité des preuves.
+    \item ISO/IEC 27037 (2012) : norme internationale encadrant l’identification, la collecte et la préservation des preuves numériques.
+\end{itemize}
+
+\subsection{Normes et standards internationaux}
+
+\begin{itemize}
+    \item NIST SP 800-86 (USA) : guide technique détaillé pour la gestion des enquêtes numériques.
+    \item RFC 3227 : introduit la notion d’« ordre de volatilité ».
+    \item ACPO Good Practice Guide (Royaume-Uni) : quatre principes garantissant l’intégrité des preuves.
+    \item Normes émergentes : Cloud Forensics, IoT Forensics.
+\end{itemize}
+
+Ces cadres favorisent la coopération entre pays et assurent que les preuves recueillies soient reconnues au niveau international.
+
+\section{Méthodes, outils et anti-forensique}
+
+\subsection{Méthodologies d’investigation}
+
+\begin{itemize}
+    \item SANS FOR508 : centré sur la réponse aux incidents.
+    \item CERT/CC : processus d’investigation lié à la cybersécurité opérationnelle.
+    \item ENISA Framework : méthodologie européenne adaptée aux contextes réglementaires stricts.
+\end{itemize}
+
+\subsection{Outils de l’investigateur moderne}
+
+\begin{itemize}
+    \item Acquisition \& imagerie : FTK Imager, EnCase.
+    \item Analyse mémoire : Volatility.
+    \item Timeline analysis : Plaso, Autopsy.
+    \item SIEM et logs : analyse centralisée de grandes volumétries.
+    \item Intelligence artificielle : machine learning et deep learning.
+\end{itemize}
+
+\subsection{Anti-forensique et contremesures}
+
+Les criminels utilisent diverses techniques :
+\begin{itemize}
+    \item Effacement sécurisé des données.
+    \item Obfuscation et chiffrement.
+    \item Stéganographie avancée.
+\end{itemize}
+
+Contremesures : déobfuscation, analyse comportementale, cryptanalyse forensique.
+
+\section{Enjeux post-quantiques et cryptographie}
+
+L’arrivée des ordinateurs quantiques remet en cause RSA et ECC (algorithmes de Shor et Grover). 
+Contre-mesures : cryptographie post-quantique (Kyber, Dilithium), Zero-Knowledge Proofs, renforcement de la chaîne de custody.
+
+Le Trilemme CRO reste central pour évaluer les compromis entre sécurité, confidentialité et valeur juridique.
+
+\section{Cadre juridique et cas pratique Cameroun 2025}
+
+\subsection{Cadre juridique}
+
+\begin{itemize}
+    \item États-Unis : Federal Rules of Evidence, CFAA.
+    \item Europe : RGPD, eIDAS, Convention de Budapest.
+    \item Afrique : Convention de Malabo (2014).
+    \item Cameroun : Lois de 2010 et loi de 2024 renforçant l’investigation numérique.
+\end{itemize}
+
+\subsection{Cas pratique : CyberFinance Cameroun 2025}
+
+\begin{enumerate}
+    \item Détection : attaque par ransomware.
+    \item Réponse initiale : confinement et préservation.
+    \item Analyse technique : étude du ransomware.
+    \item Collecte de preuves : norme ISO 27037 et protocole ZK-NR.
+    \item Timeline \& attribution : identification des auteurs probables.
+    \item Remédiation : défenses renforcées post-quantiques.
+    \item Procédure judiciaire : dossier recevable devant les tribunaux camerounais.
+\end{enumerate}
+
+Ce cas illustre la transversalité : technique, droit, organisation.
+
+\section*{Conclusion}
+
+L’investigation numérique est une discipline incontournable à l’ère numérique. 
+Elle repose sur la technique, l’éthique et le droit. 
+L’investigateur doit :
+
+\begin{itemize}
+    \item Maîtriser des compétences pluridisciplinaires.
+    \item Respecter des principes éthiques stricts.
+    \item Intégrer les normes et cryptographies post-quantiques.
+    \item Collaborer avec juristes et institutions.
+\end{itemize}
+
+L’avenir repose sur la capacité à anticiper les mutations technologiques, renforcer la confiance sociale et garantir l’opposabilité des preuves numériques dans un monde globalisé.
+
+\end{document}
