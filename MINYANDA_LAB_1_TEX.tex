@@ -1,0 +1,186 @@
+MINYANDA_RAPPORT_LAB_1
+\documentclass[12pt,a4paper]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{graphicx}
+\usepackage{geometry}
+\usepackage{setspace}
+\usepackage{titlesec}
+\usepackage{hyperref}
+
+\geometry{margin=2.5cm}
+
+\titleformat{\section}{\Large\bfseries}{\thesection}{1em}{}
+\titleformat{\subsection}{\large\bfseries}{\thesubsection}{1em}{}
+
+\begin{document}
+
+% PAGE DE GARDE
+\begin{center}
+
+\includegraphics[width=0.35\textwidth]{img_0_13.png}\\[1cm]
+
+{\Large \textbf{2025/2026}}\\[0.7cm]
+
+{\large \textbf{RÉDIGÉ PAR : MINYANDA YOMGUI JOSÉ LOÏC}}\\[0.2cm]
+{\large \textbf{MATRICULE : 22P071}}\\[0.2cm]
+{\large \textbf{4e ANNÉE CYBERSÉCURITÉ ET INVESTIGATION NUMÉRIQUE}}\\[1.2cm]
+
+{\Huge \textbf{RAPPORT LAB 1}}\\[1cm]
+
+\includegraphics[width=0.35\textwidth]{img_0_14.png}
+
+\end{center}
+
+\newpage
+
+% TABLE DES MATIÈRES
+\begin{center}
+\textbf{Contents}
+\end{center}
+
+\noindent INTRODUCTION .......................................................... 3\\
+I. Conception ...................................................................... 4\\
+1. Composition de l’architecture ........................................... 4\\
+2. Schéma de l’architecture ................................................... 4\\
+3. Plan d’adressage sur GNS3 ................................................. 4\\
+II. Déploiement ...................................................................... 5\\
+1. Création et configuration des machines virtuelles .................... 5\\
+a) Machine Virtuelle Windows 10 .............................................. 5\\
+b) Machine Virtuelle Linux (serveur web) ................................... 6\\
+c) Création d’une application web ............................................ 6\\
+2. Création de l’infrastructure ................................................ 6\\
+a) Installation de GNS3 ......................................................... 6\\
+b) Installation et configuration du pare-feu pfsense .................. 7\\
+c) Adressage de la machine Windows et test du ping ............. 8\\
+d) Adressage de la machine Linux et test du ping .................. 10\\
+CONCLUSION ...................................................................... 12
+
+\newpage
+
+% INTRODUCTION
+\section*{INTRODUCTION}
+
+L'objectif du Lab 1 est de permettre aux étudiants de créer un environnement réseau complexe dans GNS3. 
+Ils doivent configurer un réseau sécurisé incluant une machine Windows, une DMZ (zone démilitarisée) 
+avec un serveur web sous Linux, un firewall, et un routeur. 
+
+Ce Lab met en pratique les concepts de segmentation réseau et d'isolation des services critiques. 
+Tout au long de ce document, nous allons détailler la mise en œuvre part à part de ce Lab jusqu’à 
+son niveau fonctionnel.
+
+\newpage
+
+% I. CONCEPTION
+\section{Conception}
+
+\subsection{Composition de l’architecture}
+
+Notre infrastructure réseau est composée de :
+
+\begin{itemize}
+\item Un routeur comme équipement de frontière
+\item Une DMZ contenant un poste de travail (serveur Ubuntu) qui héberge une application web
+\item Un poste de travail Windows 10 sur le réseau local contenant 2 Go de données
+\end{itemize}
+
+\subsection{Schéma de l’architecture}
+
+\begin{center}
+\includegraphics[width=0.8\textwidth]{img_3_64.png}
+\end{center}
+
+\subsection{Plan d'adressage sur GNS3}
+
+\begin{center}
+\includegraphics[width=0.8\textwidth]{img_4_66.png}
+\end{center}
+
+\newpage
+
+% II. DÉPLOIEMENT
+\section{Déploiement}
+
+\subsection{Création et configuration des machines virtuelles}
+
+Nous avons installé VMWare comme logiciel de virtualisation.
+
+\subsubsection*{a) Machine Virtuelle Windows 10}
+
+Nous avons créé une machine virtuelle avec les caractéristiques suivantes :  
+DD : 20 Go ; RAM : 2 Go.
+
+Nous avons copié et collé 2 Go de données sur le Bureau et dans le répertoire « Mes documents », 
+et installé l’antivirus Avast.
+
+\begin{center}
+\includegraphics[width=0.8\textwidth]{img_5_68.png}
+\end{center}
+
+\subsubsection*{b) Machine Virtuelle Linux (serveur web)}
+
+Machine Ubuntu : DD : 20 Go ; RAM : 2 Go.
+
+\begin{center}
+\includegraphics[width=0.8\textwidth]{img_6_70.png}
+\end{center}
+
+\subsubsection*{c) Création d’une application web}
+
+Nous avons utilisé le CMS WordPress.  
+Installation du serveur local XAMPP avec Apache et MySQL.  
+Extraction de WordPress dans /other/opt/lampp, puis installation via \texttt{localhost/wordpress}.
+
+\subsection{Création de l’infrastructure}
+
+\subsubsection*{a) Installation de GNS3}
+
+\begin{center}
+\includegraphics[width=0.8\textwidth]{img_7_72.png}
+\end{center}
+
+\subsubsection*{b) Installation et configuration du pare-feu pfsense}
+
+Nous avons choisi pfsense version 2.7.
+
+\begin{center}
+\includegraphics[width=0.8\textwidth]{img_8_74.png}
+\end{center}
+
+\newpage
+
+\subsubsection*{c) Adressage de la machine Windows et test du ping}
+
+Adresse : 192.168.1.20  
+Interface LAN pfSense : 192.168.1.1
+
+\begin{center}
+\includegraphics[width=0.8\textwidth]{img_9_76.png}
+\end{center}
+
+\subsubsection*{d) Adressage de la machine Linux et test du ping}
+
+\begin{center}
+\includegraphics[width=0.8\textwidth]{img_10_78.png}
+\end{center}
+
+Lancement de XAMPP :
+
+\begin{center}
+\includegraphics[width=0.8\textwidth]{img_10_79.png}
+\end{center}
+
+\newpage
+
+% CONCLUSION
+\section*{CONCLUSION}
+
+Nous voici arrivés au terme de notre Lab.  
+Le ping passe entre les différentes machines et l’application web est accessible depuis la VM Windows.
+
+\vspace{1cm}
+
+\textbf{MATRICULE : 22P071}\\
+\textbf{RÉDIGÉ PAR : MINYANDA YOMGUI JOSÉ LOÏC}
+
+\end{document}
